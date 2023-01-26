@@ -46,7 +46,7 @@ form.button_to {
     height: 20vh;
 
     nav {
-      display: none;
+      display: flex;
     }
     .title {
       display: none;
@@ -110,4 +110,9 @@ form.button_to {
 }
 .text-danger {
   color: #f38792 !important;
+}
+
+.nav-item {
+  display:flex;
+  align-items: center;
 }
