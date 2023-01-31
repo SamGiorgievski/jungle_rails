@@ -12,4 +12,9 @@ describe('example to-do app', () => {
     cy.get(".products article").should("have.length", 2);
   });
 
+  it("renders product detail page by clicking on a product", () => {
+    cy.get('[alt="Scented Blade"]').click();
+    cy.get(".product-detail").should("exist");
+  });
+
 })
