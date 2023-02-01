@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   #   redirect_to '/signup'
   # end
 
-  user_params[:email].downcase!
+  # user_params[:email].downcase!
   @user = User.new(user_params)
   
-    if @user = User.authenticate_with_credentials(params[:email], params[:password])
+    if @user.save
       # success logic, log them in
       session[:user_id] = @user.id
       redirect_to '/'

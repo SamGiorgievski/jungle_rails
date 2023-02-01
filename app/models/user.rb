@@ -6,7 +6,8 @@ class User < ApplicationRecord
   validates :email, presence: true,  uniqueness: { case_sensitive: false }
 
   def self.authenticate_with_credentials(email, password)
-    @user = User.find_by_email(email.strip.downcase)
+    email ? newEmail = email.strip.downcase : nil
+    @user = User.find_by_email(newEmail)
     if @user && @user.authenticate(password)
       return @user
     else
